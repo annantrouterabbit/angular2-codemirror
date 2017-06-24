@@ -60,7 +60,7 @@ class JSObject {
    _config:any = this._defaultConfig;
    _height: any = null;
    _width: any = null;
-   @Output() instance = null;
+  private instance = null;
 
   /**
    * Constructor
@@ -139,14 +139,14 @@ class JSObject {
          $script(fileUrls, () => {
            this.fileLoaded = true;
            this.codemirrorInit(this._config);
-           this.onEditorLoaded.emit();
+           this.onEditorLoaded.emit(this.instance);
          });
 
        //path of matchbrackets file
      } else {
          this.fileLoaded = true;
          this.codemirrorInit(this._config);
-         this.onEditorLoaded.emit();
+         this.onEditorLoaded.emit(this.instance);
      }
    }
 
@@ -323,7 +323,7 @@ setFileUrlForKeyMap(fileUrlsArray) {
       this.codeMirrorUpdateOptions();
     } else{
       if(this.instance){
-        this.onEditorLoaded.emit();
+        this.onEditorLoaded.emit(this.instance);
       }
       
     }
@@ -341,7 +341,7 @@ setFileUrlForKeyMap(fileUrlsArray) {
           this.setEditorOption(optionKey, this._config[optionKey]);
         }
         this.instance.refresh();
-        this.onEditorLoaded.emit();
+        this.onEditorLoaded.emit(this.instance);
       });
       
 

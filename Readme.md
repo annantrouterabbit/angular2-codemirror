@@ -29,3 +29,18 @@ Setup
 	4. disableCopy - Its value must be boolean. If you want to disable copy from editor then set this flag with true value. 
 	5. disableCut - Its value must be boolean. If you want to disable cut from editor then set this flag with true value. 
 	5. disablePaste - Its value must be boolean. If you want to disable paste into editor then set this flag with true value.
+
+	Events
+	------
+	1. [ngModel] - Its value must be string and used to add code texts into editor. It is used to implement one-way binding.
+					<codemirror [ngModel] = 'Code' id='code' name='code'></codemirror>
+
+	2. [(ngModel)] - Its value must be string and used to add code texts into editor and get changed text of editor. It is used to implement two-way binding which means if you change text in editor, it will reflect in binded variable.
+					<codemirror [(ngModel)] = 'Code' id='code' name='code'></codemirror>
+
+	3. (ngModelChange) - used to get contents of editor in string format. It is used to implement two-way binding which means if you change text in editor, it will reflect in binded variable.
+					<codemirror [ngModel] = 'Code' (ngModelChange) = 'getEditorCode($event)' id='code' name='code'></codemirror>
+
+	4. (onEditorLoaded) - It notify when editor successfully loaded in both feature(default or lazyloaded) and provide an instance of currently loaded editor in paramete. It is useful when you want to get instance of editor and do some task after editor loaded.
+					<codemirror [(ngModel)] = 'Code' (onEditorLoaded) = 'doSomeTask($event)' id='code' name='code'></codemirror>
+
