@@ -16,9 +16,15 @@ Setup
 2. include CodeEditorModule into your module.
 3. Inside your template include a tag <codemirror [(ngModel)] = 'Code' id='code' name='code'></codemirror>
 4. In your controller set codemirror editor configuration options with addition options - mimes(Array of string), onDemandLoadJs(boolean), codemirrorAPIUrl(string).
+	Codemirror configuration Options
+	——————————————————
+	For code mirror options visit to https://codemirror.net/doc/manual.html#config
 
 	Addition Options
 	----------------
 	1. mimes- Its value must be array of string(s). Each string denotes the mime supported for particular language.
 	2. onDemandLoadJs- Its value must be boolean. If you want to load required js file except codemirror.js on demand then set this flag to true.
-	3. codemirrorAPIUrl- Its value must be a string denoting the path of folder of codemirror like '/node_modules/codemirror'. It is used to load js file on demand. 
+	3. codemirrorAPIUrl- Its value must be a string denoting the path of folder of codemirror like '/node_modules/codemirror'. It is used to load js file on demand.
+	4. disableCopy - Its value must be boolean. If you want to disable copy from editor then set this flag with true value. 
+	5. disableCut - Its value must be boolean. If you want to disable cut from editor then set this flag with true value. 
+	5. disablePaste - Its value must be boolean. If you want to disable paste into editor then set this flag with true value.
