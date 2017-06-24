@@ -1,12 +1,11 @@
 angular2-codemirror
 ---------------------
-
 This is a wrapper over codemirror native code, written to use in angular2 application. 
 
-Featuers
+Features
 --------
-1. reload editor each time on changing its configuration.
-2. provides a way to load required js file on-demand(lazyload). So, you have to only include codemirror.js file in index.html. You can use the feature of lazyload to set addition options.
+1. Reload editor each time on changing its configuration.
+2. Provides a way to load required js file on-demand(lazyload). So, you have to only include codemirror.js file in index.html. You can use the feature of lazyload to set addition options.
 
 
 Setup
@@ -38,9 +37,9 @@ Setup
 	2. [(ngModel)] - Its value must be string and used to add code texts into editor and get changed text of editor. It is used to implement two-way binding which means if you change text in editor, it will reflect in binded variable.
 					<codemirror [(ngModel)] = 'Code' id='code' name='code'></codemirror>
 
-	3. (ngModelChange) - used to get contents of editor in string format. It is used to implement two-way binding which means if you change text in editor, it will reflect in binded variable.
+	3. (ngModelChange) - used to get contents of editor in string format.
 					<codemirror [ngModel] = 'Code' (ngModelChange) = 'getEditorCode($event)' id='code' name='code'></codemirror>
 
-	4. (onEditorLoaded) - It notify when editor successfully loaded in both feature(default or lazyloaded) and provide an instance of currently loaded editor in paramete. It is useful when you want to get instance of editor and do some task after editor loaded.
+	4. (onEditorLoaded) - It notify when editor successfully loaded in both feature(default or lazyloaded) and provide an instance of currently loaded editor in parameter. It is useful when you want to get instance of editor and do some task after editor loaded.
 					<codemirror [(ngModel)] = 'Code' (onEditorLoaded) = 'doSomeTask($event)' id='code' name='code'></codemirror>
 
