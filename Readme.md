@@ -17,7 +17,7 @@ Setup
 3. Inside your template include a tag <codemirror [(ngModel)] = 'Code' id='code' name='code'></codemirror>
 4. In your controller set codemirror editor configuration options with addition options - mimes(Array of string), onDemandLoadJs(boolean), codemirrorAPIUrl(string).
 	Codemirror configuration Options
-	——————————————————
+	--------------------------------
 	For code mirror options visit to https://codemirror.net/doc/manual.html#config
 
 	Addition Options
